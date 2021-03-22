@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "cn.itcast.camerasecond_sim"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    // 文件选择 jar 包，非必须
+    implementation 'com.github.angads25:filepicker:1.0.6'
+    // dns 相关 jar 包，必须依赖
+    implementation 'com.qiniu:happy-dns:0.2.17'
+    // 监听应用生命周期，必须依赖
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+// 扫码相关 jar 包，非必须
+    implementation 'com.journeyapps:zxing-android-embedded:3.0.2@aar'
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+
+    // 推流 SDK jar 包，为推流 SDK 必须依赖的库
+    implementation files('libs/pldroid-media-streaming-3.0.2.jar')
+
+}
